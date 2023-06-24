@@ -1,6 +1,16 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  devise_for :users
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  resources :users, only: [:index, :show, :create] do
+    member do
+      get :followers
+      get :followings
+    end
+  end
+
+  resources :posts, only: [:index, :create, :show] do
+    resources :comments, only: [:index, :create]
+  end
+
+  resources :follows, only: [:create, :destroy]
 end
