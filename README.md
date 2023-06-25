@@ -1,24 +1,57 @@
-# README
+# Api con Rails 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Versiones de ruby y rails 
+```
+ruby 3.2.1 
+```
+```
+Rails 7.0.5
+```
+## clonar repo 
+```bash
+git clone link_repo
+```
 
-Things you may want to cover:
+```bash
+cd nombre_repo
+```
+## instalar gemas 
+```bash
+bundle install
+```
+## crear base de datos 
+```bash 
+rails db:create 
+```
 
-* Ruby version
+## crear la migración 
+```bash 
+rails db:migrate
+```
+## precargar datos 
+```bash
+rails db:seed
+```
+## correr el programa 
+```bash
+rails s 
+```
 
-* System dependencies
+## rutas de los endpoints
+### registrarse
+```
+http://localhost/auth/signup
+```
+o
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```
+http://127.0.0.1:3000/auth/signup
+```
+### iniciar session 
+```
+http://127.0.0.1:3000/auth/login
+```
+### cerrar session
+```
+http://127.0.0.1:3000/auth/logout
+```
